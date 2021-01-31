@@ -1,4 +1,5 @@
-import { Button } from "@lucifer/components";
+import React from 'react';
+import { Button } from '@lucifer/components';
 import logo from './logo.svg';
 import './App.css';
 
