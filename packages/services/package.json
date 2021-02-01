@@ -1,0 +1,16 @@
+{
+  "name": "@lucifer/services",
+  "version": "1.0.0",
+  "description": "A react services library",
+  "main": "index.ts",
+  "module": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@lucifer/core": "1.0.0",
+    "axios": "^0.21.1"
+  },
+  "author": "Vaibhav",
+  "license": "MIT"
+}

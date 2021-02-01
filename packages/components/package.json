@@ -2,14 +2,15 @@
   "name": "@lucifer/components",
   "version": "1.0.0",
   "description": "A react components library for lucifer",
-  "main": "index.js",
-  "module": "index.js",
+  "main": "index.ts",
+  "module": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Vaibhav",
   "license": "MIT",
   "dependencies": {
+    "@lucifer/core": "1.0.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "@types/react": "16.9.56",
