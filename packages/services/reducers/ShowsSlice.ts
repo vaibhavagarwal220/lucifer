@@ -26,7 +26,7 @@ const showsSlice = createSlice({
     .addCase(getShows.fulfilled, (state, action) => {
       state.status = 'succeeded'
       // Add any fetched posts to the array
-      state.shows = state.shows.concat(action.payload)
+      state.shows = action.payload
     })
     .addCase(getShows.rejected, (state, action) => {
       state.status = 'failed'

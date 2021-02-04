@@ -1,0 +1,17 @@
+.cardContainer {
+    display: inline-block;
+    max-width: 320px;
+    border: 1px solid;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    margin: 15px;
+    background-color: #00b290;
+    color: white;
+}
+.showCard {
+    display: inline-block;
+}
+.showCardSummary {
+    height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+}

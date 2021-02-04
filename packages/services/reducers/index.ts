@@ -1,4 +1,3 @@
-import { ShowDetails } from '@lucifer/core';
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
 import { combineReducers } from 'redux'

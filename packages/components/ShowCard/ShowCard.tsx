@@ -1,6 +1,7 @@
 import { DocumentCard, DocumentCardPreview, DocumentCardTitle, IDocumentCardPreviewProps, ImageFit } from "@fluentui/react";
 import React from "react";
 import { ShowDetails } from '@lucifer/core'
+import ShowCardCSS from './ShowCard.module.css';
 
 interface Props {
     showDetail: ShowDetails
@@ -24,11 +25,9 @@ export const ShowCard: React.FC<Props>= (props: Props) => {
         ],
       };
     return (
-      <div
-      style = {{display:'inline-block'}}>
-        <div dangerouslySetInnerHTML={{__html:props.showDetail.show.summary}}></div>
+      <div className={ShowCardCSS.cardContainer}>
         <DocumentCard
-            style = {{display:'inline-block'}}
+            className={ShowCardCSS.showCard}
             aria-label={props.showDetail.show.name}
             onClickHref={props.showDetail.show.url}
             onClickTarget="_blank"
@@ -39,6 +38,10 @@ export const ShowCard: React.FC<Props>= (props: Props) => {
             shouldTruncate
             />
         </DocumentCard>
+        <div className={ShowCardCSS.showCardSummary} 
+        dangerouslySetInnerHTML={{__html:props.showDetail.show.summary}}>
+        </div>
+
       </div>        
       );
 }

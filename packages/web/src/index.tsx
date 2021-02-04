@@ -5,7 +5,6 @@ import App from './App/App';
 import reportWebVitals from './reportWebVitals';
 import { initializeIcons } from '@fluentui/react/lib/Icons';
 import { Provider } from 'react-redux';
-import {configureStore} from '@reduxjs/toolkit'
 import {store} from '@lucifer/services'; 
 initializeIcons();
 
