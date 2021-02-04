@@ -24,6 +24,9 @@ export const ShowCard: React.FC<Props>= (props: Props) => {
         ],
       };
     return (
+      <div
+      style = {{display:'inline-block'}}>
+        <div dangerouslySetInnerHTML={{__html:props.showDetail.show.summary}}></div>
         <DocumentCard
             style = {{display:'inline-block'}}
             aria-label={props.showDetail.show.name}
@@ -36,6 +39,7 @@ export const ShowCard: React.FC<Props>= (props: Props) => {
             shouldTruncate
             />
         </DocumentCard>
-        );
+      </div>        
+      );
 }
   

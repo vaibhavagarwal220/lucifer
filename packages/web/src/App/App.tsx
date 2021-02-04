@@ -1,47 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ShowCard, TextInput } from '@lucifer/components';
-import { searchShow } from '@lucifer/services';
+import { getShows, RootState, useAppDispatch } from '@lucifer/services';
 import './App.css';
 import { PrimaryButton } from '@fluentui/react';
-import { ShowDetails } from '@lucifer/core';
+import { useSelector } from 'react-redux';
 
-type Props = {};
-type State = {searchText: string,shows: ShowDetails[]};
-class App extends React.Component<Props,State> {
-  constructor(props: Props){
-    super(props);
-    this.state = {searchText:'',shows:[]};
-    this.onChange = this.onChange.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-  }
+const App = () => {
 
-  onChange(value?: string) {
-    if(value == null) return;
-    this.setState({searchText: value});
-  }
-  handleClick(searchString: string){
-    searchShow(searchString).then((response ) => {
-      const val = response.data;
-      this.setState({shows:val});
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  }
+  const [searchText,setSearchText] = useState('');
+  const shows = useSelector( (state:RootState) => state.shows);
+  const dispatch = useAppDispatch();
+
+  // useEffect(()=>{
+  //   console.log('called on update');
+  // },[searchText])
  
-  render(){
     return (
       <div className='App'>
         <div className='App-header'>
-          <TextInput onUserInput={this.onChange} onSubmit={this.handleClick}/>
-          <PrimaryButton className="search-btn" text="Search" onClick={() => this.handleClick(this.state.searchText)}/>
+          <TextInput onUserInput={setSearchText} onSubmit={()=>{dispatch(getShows(searchText))}}/>
+          <PrimaryButton className="search-btn" text="Search" onClick={() => dispatch(getShows(searchText))}/>
         </div>
-        {this.state.shows.map((value, index) => {
+        {shows.shows.map((value, index) => {
             return <ShowCard key={index} showDetail={value}/>
         })}
       </div>
     ); 
-  }
 }
 
 export default App;

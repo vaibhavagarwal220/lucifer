@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 import styles from './TextInput.module.css';
 import { TextField } from '@fluentui/react';
 
 type Props = { 
-  onUserInput: (value?: string) => void, 
+  onUserInput: (value: string | ((prevVar: string) => string)) => void, 
   onSubmit: (value: string) => void  
 };
 type State = {  };
@@ -21,7 +21,9 @@ export class TextInput extends React.Component<Props,State>
     }
   }
   _onChangeHandler(event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, newValue?: string) {
-    this.props.onUserInput(newValue);
+    if(newValue!=undefined) {
+      this.props.onUserInput(newValue);
+    }
   }
   render(){
     return (
