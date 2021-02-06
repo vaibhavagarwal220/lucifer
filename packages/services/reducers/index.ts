@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
 import { combineReducers } from 'redux'
+import peopleSlice from './PeopleSlice';
 import showsSlice from './ShowsSlice'
 
 const rootReducer = combineReducers({
-    shows: showsSlice
+    shows: showsSlice,
+    people: peopleSlice
 });
 
 

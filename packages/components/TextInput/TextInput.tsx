@@ -1,10 +1,12 @@
-import React, { Dispatch, SetStateAction } from 'react';
+import React from 'react';
 import styles from './TextInput.module.css';
 import { TextField } from '@fluentui/react';
 
 type Props = { 
-  onUserInput: (value: string | ((prevVar: string) => string)) => void, 
-  onSubmit: (value: string) => void  
+  onUserInput: (value: string) => void, 
+  onSubmit: (value: string) => void,
+  customClassName?: string
+  placeholder: string
 };
 type State = {  };
 
@@ -27,8 +29,9 @@ export class TextInput extends React.Component<Props,State>
   }
   render(){
     return (
-      <TextField 
-      label='Type and click search to see the magic !' 
+      <TextField
+      placeholder = {this.props.placeholder}
+      className={this.props.customClassName}
       onChange={this._onChangeHandler}
       onKeyDown={this._keyPressHandler}
       />

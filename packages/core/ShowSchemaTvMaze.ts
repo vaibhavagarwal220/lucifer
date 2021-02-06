@@ -1,3 +1,5 @@
+import { Links, Country } from ".";
+import { Image } from './CommonSchemaTvMaze'
 export interface ShowDetails {
     score: number;
     show: Show;
@@ -36,11 +38,6 @@ export interface ShowDetails {
     name: string;
     country: Country;
   }
-  export interface Country {
-    name: string;
-    code: string;
-    timezone: string;
-  }
   export interface WebChannel {
     id: number;
     name: string;
@@ -51,15 +48,3 @@ export interface ShowDetails {
     thetvdb?: number | null;
     imdb: string;
   }
-  export interface Image {
-    medium: string;
-    original: string;
-  }
-  export interface Links {
-    self: SelfOrPreviousepisode;
-    previousepisode: SelfOrPreviousepisode;
-  }
-  export interface SelfOrPreviousepisode {
-    href: string;
-  }
-  

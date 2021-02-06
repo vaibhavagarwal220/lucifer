@@ -1,0 +1,35 @@
+.navHeader {
+    background-color: #1971d7;
+    display: inline-flex;
+    width: 100%;
+    font-size: calc(10px + 2vmin);
+}
+.navAppIcon {
+    color: white;
+    padding: 10px;
+}
+ul.navList {
+    display: table;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+} 
+ul.navList {
+    margin-left: 100px;
+}
+li.navItem {
+    display: table-cell;
+    font-size: 18px;
+    vertical-align: middle;
+}
+a.navHref,a.navHref:visited {
+    height: 5vh;
+    line-height: 5vh;
+    padding: 0px 10px;
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+a.navHref:hover, a.navHrefActive {
+    background: #1665c0;
+}

@@ -1,0 +1,13 @@
+.container {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+.textField{
+  width: 300px;
+  margin-top: 40px;
+  display: inline-block;
+}
+.searchBtn {
+  margin-top: 40px;
+}
