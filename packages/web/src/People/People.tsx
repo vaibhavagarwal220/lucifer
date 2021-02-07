@@ -1,7 +1,7 @@
 import React from 'react';
 import { PeopleCard, TextInput } from '@lucifer/components';
 import { AppDispatch, RootState, searchPeople, resetPeople } from '@lucifer/services';
-import { PrimaryButton } from '@fluentui/react';
+import { Stack, IStackStyles, IStackTokens, PrimaryButton } from '@fluentui/react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { PeopleDetails } from '@lucifer/core';
@@ -32,15 +32,26 @@ class People extends React.Component<Props,State> {
   }
   render(){
     let content;
+    const wrapStackTokens: IStackTokens = { childrenGap: 30 };
+    const stackStyles: IStackStyles = {
+      root: {
+        width: '100%',
+      },
+      inner: {
+        justifyContent:'center'
+      }
+    };
     if(this.props.status==="loading") {
       content = <div>Loading...</div>
     }
     else if(this.props.status==='succeeded' && this.props.peopleList) {
       content = 
       <div className={PeopleCSS.peopleContainer}>
-          {this.props.peopleList.map((value, index) => {
-            return <PeopleCard key={index} peopleDetail={value}/>
-          })}
+          <Stack horizontal wrap styles={stackStyles} tokens={wrapStackTokens}>
+            {this.props.peopleList.map((value, index) => {
+              return <PeopleCard key={index} peopleDetail={value}/>
+            })}
+          </Stack>
       </div>
     }
   

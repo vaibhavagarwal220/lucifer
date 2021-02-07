@@ -4,7 +4,7 @@
   text-align: center;
 }
 .textField{
-  width: 300px;
+  max-width: 300px;
   margin-top: 40px;
   display: inline-block;
 }

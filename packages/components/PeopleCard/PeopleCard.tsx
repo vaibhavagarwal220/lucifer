@@ -1,4 +1,4 @@
-import { Persona, IPersonaSharedProps, PersonaSize, PersonaPresence } from "@fluentui/react";
+import { Persona, IPersonaSharedProps, PersonaSize, PersonaPresence, IPersonaStyles, IPersonaCoinProps } from "@fluentui/react";
 import React from "react";
 import { PeopleDetails } from '@lucifer/core'
 import PeopleCardCSS from './PeopleCard.module.css';
@@ -13,7 +13,23 @@ export const PeopleCard: React.FC<Props>= (props: Props) => {
   const imageUrl = props.peopleDetail.person.image?.medium;
   const birthday = props.peopleDetail.person.birthday;
   const text= '';
+  const cardStyles: IPersonaStyles = {
+    root:{},
+    details:{},
+    primaryText:{color:'white'},
+    secondaryText:{color:'white'},
+    tertiaryText:{color:'white'},
+    optionalText:{},
+    textContent:{}
+  }
+  const coinProps:IPersonaCoinProps = {
+    size:PersonaSize.size72,
+    style:{
+      marginLeft:10
+    }
+  }
   const personProps: IPersonaSharedProps = {
+    coinProps,
     imageUrl: imageUrl,
     imageInitials: getInitials(props.peopleDetail.person.name),
     text: props.peopleDetail.person.name,
@@ -24,6 +40,7 @@ export const PeopleCard: React.FC<Props>= (props: Props) => {
   const [renderDetails, updateRenderDetails] = React.useState(true);
   return (
       <Persona
+      styles={cardStyles}
         className={PeopleCardCSS.peopleCard}
         {...personProps}
         size={PersonaSize.size100}
