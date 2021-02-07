@@ -4,7 +4,7 @@ var options = {
     index: 'index.html'
 };
 //Catch All Route for URL
-server.use('/public', express.static(__dirname, options));
+server.use('/', express.static('/home/site/wwwroot', options));
 
 server.get('/*', (req, res) => {
     res.sendFile(__dirname + '/index.html');
