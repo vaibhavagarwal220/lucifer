@@ -1,3 +1,3 @@
-export * from './ShowSchemaTvMaze';
-export * from './PeopleSchemaTvMaze';
-export * from './CommonSchemaTvMaze'
+export * from './TvMaze/ShowSchemaTvMaze';
+export * from './TvMaze/PeopleSchemaTvMaze';
+export * from './TvMaze/CommonSchemaTvMaze'

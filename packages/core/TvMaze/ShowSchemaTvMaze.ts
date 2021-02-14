@@ -1,4 +1,4 @@
-import { Links, Country } from ".";
+import { Links, Country } from "..";
 import { Image } from './CommonSchemaTvMaze'
 export interface ShowDetails {
     score: number;
